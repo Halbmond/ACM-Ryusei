@@ -1,12 +1,17 @@
 
-bool cmp(const point&a,const point&b){
+bool cmp(const point&a,const point&b)
+{
 	return a.x<b.x||(a.x==b.x&&a.y<b.y);
 }
-ll multi(const point&a,const point&b,const point&c){
+
+ll multi(const point&a,const point&b,const point&c)
+{
 	return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y);
 }
+
 point p[MXN],q[MXN];int n,top;
-void graham(){
+void graham()
+{
 	sort(p+1,p+n+1,cmp);
 	q[top=0]=p[1];
 	rep(i,2,n){
