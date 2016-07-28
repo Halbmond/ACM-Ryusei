@@ -53,6 +53,5 @@ for(int i = 0; i < n; ++i) ans = (ans + (M / m[i]) * inv(M / m[i], m[i]) * res[i
 		ll y = calc(d, m % d, -r, -l);
 		if (y == -1) return -1;
 		ll x = (l + m * y + d - 1) / d;
-		//db(m), db(d), db(l), db(r), db(x), db(y),el;
 		return x;
 	}

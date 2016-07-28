@@ -28,7 +28,7 @@
 * `step(v) = min(step(u)) + 1  (sg(v) == 0 && u是v的后继)`
 
 
-对于  Every- -G SG  游戏先手必胜当且仅当单一游戏中最大的 step 为奇
+对于  Every-SG  游戏先手必胜当且仅当单一游戏中最大的 step 为奇
 数。
 
 
