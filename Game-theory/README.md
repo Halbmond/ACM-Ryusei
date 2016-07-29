@@ -23,9 +23,7 @@
 最快几步能将游戏带入终止状态，对于 SG 值不为 0 的点，我们需要知道
 最慢几步游戏会被带入终止状态，我们用 step 函数来表示这个值。
 
-
-* `step(v) = max(step(u)) + 1  (sg(v) > 0 && u是v的后继 && sg(u) == 0)`
-* `step(v) = min(step(u)) + 1  (sg(v) == 0 && u是v的后继)`
+![Formula](CodeCogsEqn.gif)
 
 
 对于  Every-SG  游戏先手必胜当且仅当单一游戏中最大的 step 为奇
