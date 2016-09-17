@@ -4,8 +4,8 @@
 n,m<=10^7，多组数据
 Crash的数字表格加强版
 */
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <algorithm>
 #define N 10010000
 #define mod 100000009ll
@@ -35,7 +35,7 @@ void init()
 			g[i*pri[j]]=g[i]*g[pri[j]]%mod;
 		}
 		sum[i]=sum[i-1]+g[i];
-	}		
+	}
 }
 ll F(ll x,ll y)
 {

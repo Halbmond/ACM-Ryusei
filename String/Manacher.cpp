@@ -1,4 +1,3 @@
-
 int rad[MXN];
 void manacher(char s[],int n){
 	for(int i=1,j=0,k;i<n;i+=k,j=max(j-k,0)){

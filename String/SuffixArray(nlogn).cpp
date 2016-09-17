@@ -1,4 +1,3 @@
-
 int sa[MXN],rk[MXN],ht[MXN];
 void DA(int n,int m){
 	static int t[2][MXN*2]={},*x=t[0],*y=t[1],w[MXN],p;

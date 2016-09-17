@@ -1,4 +1,4 @@
-#include <cstdio>
+﻿#include <cstdio>
 #include <cmath>
 #include <vector>
 #include <deque>
@@ -266,7 +266,6 @@ int halfplane_cross_cmp(line2 a, line2 b) {
 	double c1 = arg(a.s), c2 = arg(b.s);
 	return c1 < c2-eps || fabs(c1-c2) < eps && b.s % (a.a - b.a) / dis(b.s) > eps;
 }
-//半平米傲娇
 int halfplane_cross(const std::vector<line2> &a, convex2 &b) {
 	std::vector<line2> t(a);
 	std::sort(t.begin(), t.end(), halfplane_cross_cmp);

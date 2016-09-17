@@ -1,24 +1,4 @@
-//
-//  Created by TaoSama on 2016-04-27
-//  Copyright (c) 2016 TaoSama. All rights reserved.
-//
-#pragma comment(linker, "/STACK:102400000,102400000")
-#include <algorithm>
-#include <cctype>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iomanip>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <string>
-#include <set>
-#include <vector>
-
-using namespace std;
-#define pr(x) cout << #x << " = " << x << "  "
+﻿#define pr(x) cout << #x << " = " << x << "  "
 #define prln(x) cout << #x << " = " << x << endl
 const int N = 1e5 + 10, INF = 0x3f3f3f3f, MOD = 1e9 + 7;
 const double EPS = 1e-8;
@@ -59,12 +39,6 @@ int dfs(int u) {
 }
 
 int main() {
-#ifdef LOCAL
-    freopen("C:\\Users\\TaoSama\\Desktop\\in.txt", "r", stdin);
-//  freopen("C:\\Users\\TaoSama\\Desktop\\out.txt","w",stdout);
-#endif
-    ios_base::sync_with_stdio(0);
-
     int t; scanf("%d", &t);
     while(t--) {
         scanf("%d", &n);
@@ -89,20 +63,20 @@ int main() {
             }
 
             auto up = s.lower_bound({id, 1}), dw = up;
-            if(up == s.end() || dw == s.begin()) { //ÎÞ°üº¬
+            if(up == s.end() || dw == s.begin()) {
                 p[id] = 0;
                 dep[id] = 1;
                 G[0].push_back(id);
-            } else if((--dw)->id == up->id) { //Ö±½Ó±»°üº¬
+            } else if((--dw)->id == up->id) {
                 p[id] = dw->id;
                 dep[id] = dep[dw->id] + 1;
                 G[dw->id].push_back(id);
             } else {
-                if(dep[dw->id] == dep[up->id]) { //ÈýÔ²ÊÇÐÖµÜ
+                if(dep[dw->id] == dep[up->id]) {
                     p[id] = p[dw->id];
                     dep[id] = dep[dw->id];
                     G[p[dw->id]].push_back(id);
-                } else { //Á½Ô²ÊÇÐÖµÜ£¬ÁíÒ»Ô²£¨Éî¶ÈÐ¡µÄ£©°üÁ½Ô²
+                } else {
                     if(dep[dw->id] > dep[up->id]) swap(up, dw);
                     p[id] = dw->id;
                     dep[id] = dep[dw->id] + 1;
